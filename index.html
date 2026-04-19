@@ -412,6 +412,7 @@ const ACCOUNTS = {
     name: "Textron Group",
     sub: "Bell Flight · Textron Aviation · Textron Systems",
     url: "https://textron.salesbeakon.com",
+    token: "bkn7x2t9p4q1m8w3e6r0y5u",
     industry: "Aerospace & Defense",
     location: "Fort Worth TX · Wichita KS",
     priority: "high",
@@ -434,6 +435,7 @@ const ACCOUNTS = {
     name: "RTX Corporation",
     sub: "Collins Aerospace · Pratt & Whitney · Raytheon",
     url: "https://rtx.salesbeakon.com",
+    token: "rkn5v8n2j6h3f0d4s9a7l1",
     industry: "Aerospace & Defense",
     location: "Arlington VA · Windsor Locks CT · Tucson AZ",
     priority: "high",
@@ -693,7 +695,8 @@ function showPortal() {
       const a = ACCOUNTS[k]; if (!a) return '';
       const pc = a.priority==='high'?'priority-high':a.priority==='medium'?'priority-medium':'priority-low';
       const pl = a.priority==='high'?'HIGH PRIORITY':a.priority==='medium'?'MEDIUM':'LOW';
-      return `<a class="account-card" href="${a.url}" target="_blank">
+      const dashUrl = a.token ? `${a.url}?t=${a.token}` : a.url;
+      return `<a class="account-card" href="${dashUrl}" target="_blank">
         <div class="ac-top">
           <div class="ac-top-row">
             <div><div class="ac-name">${a.name}</div><div class="ac-sub">${a.sub}</div></div>
