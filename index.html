@@ -708,7 +708,10 @@ function showPortal() {
 
   // Greeting
   const hr = new Date().getHours();
-  document.getElementById('portal-greeting').textContent = `Good ${hr<12?'morning':hr<17?'afternoon':'evening'}, ${uname.split(' ')[0]}`;
+  const _teamName = userAccounts.includes('textron') ? 'Textron-Cyient Account Team'
+                  : userAccounts.includes('rtx')     ? 'RTX-Cyient Account Team'
+                  : uname.split(' ')[0];
+  document.getElementById('portal-greeting').textContent = `Good ${hr<12?'morning':hr<17?'afternoon':'evening'}, ${_teamName}`;
   document.getElementById('portal-subtitle').textContent = userAccounts.length===0
     ? 'No accounts assigned yet. Contact your administrator.'
     : `You have ${userAccounts.length} account${userAccounts.length>1?'s':''} assigned. Click any card to open its intelligence dashboard.`;
