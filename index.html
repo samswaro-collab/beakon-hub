@@ -1053,7 +1053,25 @@ async function doLogin() {
     company: user.company || 'cyient',
     clearanceAccess: user.clearanceAccess === true
   }));
-  showCompanies();
+  // AM with 1 account → go straight to dashboard; admin → hub
+  if (!redirectIfSingleAccount(user)) showCompanies();
+}
+
+// ── BEAKON: AM direct-to-dashboard redirect ──────────────────────────
+// If the logged-in user is an AM with exactly 1 account, send them straight
+// to that dashboard — no hub screens to click through.
+function redirectIfSingleAccount(userObj) {
+  if (!userObj || userObj.role === 'admin') return false;
+  const accts = userObj.accounts || [];
+  if (accts.length === 1 && accts[0] !== '*') {
+    const acct = ACCOUNTS[accts[0]];
+    if (acct && acct.url) {
+      const url = acct.token ? acct.url + '?t=' + acct.token : acct.url;
+      window.location.replace(url);
+      return true;
+    }
+  }
+  return false;
 }
 
 function doLogout() {
@@ -1429,7 +1447,7 @@ function showMsg(el, type, text) {
   if (sess) {
     try {
       const s = JSON.parse(sess);
-      if (s && s.user && USERS[s.user]) { SESSION.user=s.user; SESSION.hash=USERS[s.user].hash; showCompanies(); return; }
+      if (s && s.user && USERS[s.user]) { SESSION.user=s.user; SESSION.hash=USERS[s.user].hash; if (!redirectIfSingleAccount(USERS[s.user])) showCompanies(); return; }
     } catch(e){}
   }
   // 2. Auto-fill remembered credentials if "Remember Me" was checked previously
@@ -1452,7 +1470,7 @@ function showMsg(el, type, text) {
             company: user.company || 'cyient',
             clearanceAccess: user.clearanceAccess === true
           }));
-          showCompanies();
+          if (!redirectIfSingleAccount(user)) showCompanies();
         }
       })();
       return;
