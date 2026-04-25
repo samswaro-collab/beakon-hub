@@ -624,7 +624,7 @@ const USERS = {
     role: "clientadmin",
     // SHA-256 of "CyientAdmin2026"
     hash: "c0d9662b471241523fbca237dde710f997acd1786ea51dd14ef6d568ffde6794",
-    accounts: ["*"],          // sees all cyient accounts via BU hub
+    accounts: ["textron", "boeing", "rtx", "honeywell", "parker", "dhc", "gea", "bae", "bombardier", "embraer", "crane", "gulfstream", "hondaaircraft"],          // sees all cyient accounts via BU hub
     company: "cyient",
     clearanceAccess: false
   },
@@ -805,50 +805,6 @@ const ACCOUNTS = {
     revenue: 14.8,
     signal: "Anthem avionics platform · APU production ramp · HTI Bengaluru expansion · eVTOL avionics (Joby/Archer)"
   },
-  "bombardier": {
-    name: "Bombardier",
-    sub: "Global 7500 · Challenger · Learjet · Defense",
-    url: "https://bombardier.salesbeakon.com/",
-    industry: "Business Aviation",
-    location: "Montreal QC · Wichita KS · Belfast UK",
-    priority: "high",
-    updated: "February 2026",
-    roles: "90+", revenue: 7.4,
-    signal: "Global 8000 certification · Challenger 3500 production ramp · MRO expansion"
-  },
-  "embraer": {
-    name: "Embraer",
-    sub: "Commercial Aviation · Executive Jets · Defense",
-    url: "https://embraer.salesbeakon.com/",
-    industry: "Aerospace",
-    location: "Sao Paulo BR · Nashville TN · Fort Lauderdale FL",
-    priority: "high",
-    updated: "February 2026",
-    roles: "100+", revenue: 6.2,
-    signal: "E2 production ramp · Phenom 300E avionics · C-390 export campaign"
-  },
-  "bae": {
-    name: "BAE Systems",
-    sub: "Air · Electronic Systems · Platforms & Services",
-    url: "https://bae.salesbeakon.com/",
-    industry: "Defense",
-    location: "Farnborough UK · Nashua NH · Fort Worth TX",
-    priority: "medium",
-    updated: "January 2026",
-    roles: "80+", revenue: 28.3,
-    signal: "GCAP Tempest development · F-35 sustainment · M113 replacement program"
-  },
-  "thales": {
-    name: "Thales Group",
-    sub: "Aerospace · Defense & Security · Digital Identity",
-    url: "https://thales.salesbeakon.com/",
-    industry: "Defense & Avionics",
-    location: "Paris FR · Reading UK · Ottawa CA",
-    priority: "medium",
-    updated: "January 2026",
-    roles: "70+", revenue: 20.1,
-    signal: "FlytX avionics platform · UAS C2 systems · SafePort maritime"
-  },
   "parker": {
     name: "Parker Aerospace",
     sub: "Flight Control · Fuel Systems · Hydraulics · Engine Systems",
@@ -873,50 +829,6 @@ const ACCOUNTS = {
     buRoles: { "DHC-515 Program (Strathmore AB)": 80, "Q400 Restart Engineering": 50, "Twin Otter Support": 20 },
     revenue: 0.38,
     signal: "DHC-515 first assembly Mar 2026 · 20+ firm orders (Greece/Croatia/Alberta) · Q400 production restart 2027 · Twin Otter 1,000th delivery Mar 2026 · Zero India presence"
-  },
-  "triumph": {
-    name: "Triumph Group",
-    sub: "Aerospace Structures · Systems & Support · MRO",
-    url: "https://triumph.salesbeakon.com/",
-    industry: "Aerospace MRO",
-    location: "Berwyn PA · West Palm Beach FL · Red Oak TX",
-    priority: "medium",
-    updated: "December 2025",
-    roles: "55+", revenue: 1.2,
-    signal: "737 nacelle production · Gulfstream structures · Military MRO contracts"
-  },
-  "ametek": {
-    name: "AMETEK Aerospace",
-    sub: "Electronic Instruments · Electromechanical · MRO",
-    url: "https://ametek.salesbeakon.com/",
-    industry: "Electronic Instruments",
-    location: "Berwyn PA · Monrovia CA · Wilmington DE",
-    priority: "medium",
-    updated: "November 2025",
-    roles: "40+", revenue: 6.1,
-    signal: "Precision motion control for eVTOL · SIFCO MRO services · Defense sensor refresh"
-  },
-  "transdigm": {
-    name: "TransDigm Group",
-    sub: "Aerospace Components · Aftermarket · Defense",
-    url: "https://transdigm.salesbeakon.com/",
-    industry: "Aerospace Components",
-    location: "Cleveland OH · Various US",
-    priority: "medium",
-    updated: "November 2025",
-    roles: "50+", revenue: 7.3,
-    signal: "Aftermarket parts demand surge · Acquisition integration engineering · eVTOL actuators"
-  },
-  "jeppesen": {
-    name: "Jeppesen (Boeing)",
-    sub: "Navigation Data · Operations Software · Training",
-    url: "https://jeppesen.salesbeakon.com/",
-    industry: "Aviation Data & Software",
-    location: "Englewood CO · Frankfurt DE · Sydney AU",
-    priority: "medium",
-    updated: "October 2025",
-    roles: "35+", revenue: 1.1,
-    signal: "Digital chart modernization · UAM airspace integration · AI flight planning"
   },
   "gea": {
     name: "GE Aerospace",
@@ -985,50 +897,6 @@ const ACCOUNTS = {
     revenue: 0.76,
     signal: "$864M backlog +23% · Vian acquisition Jan 2024 · F-35 BCS ramp · New CEO Alex Alcala Apr 2026 · DO-178C embedded SW demand"
   },
-  "safran": {
-    name: "Safran Group",
-    sub: "Landing Systems · Nacelles · Cabin · Electronics · Power",
-    url: "https://safran.salesbeakon.com/",
-    industry: "Aerospace Systems",
-    location: "Teterboro NJ · Gainesville TX · Everett WA · Toulouse FR",
-    priority: "high",
-    updated: "April 2026",
-    roles: "200+", revenue: 24.6,
-    signal: "CFM LEAP nacelle ramp (Safran Nacelles) · Landing gear for 737MAX/A320neo · LEAP engine software V&V · India offset for Rafale"
-  },
-  "moog": {
-    name: "Moog Inc.",
-    sub: "Aircraft Controls · Space & Defense · Industrial · Medical",
-    url: "https://moog.salesbeakon.com/",
-    industry: "Precision Motion Control",
-    location: "East Aurora NY · Salt Lake City UT · Goleta CA · Torrance CA",
-    priority: "high",
-    updated: "April 2026",
-    roles: "150+", revenue: 3.4,
-    signal: "F-35 flight control actuation · eVTOL actuation (Joby/Archer contracts) · DO-178C flight control SW · East Aurora NY hiring"
-  },
-  "woodward": {
-    name: "Woodward Inc.",
-    sub: "Aerospace · Industrial · Fuel Controls · Flight Control Actuation",
-    url: "https://woodward.salesbeakon.com/",
-    industry: "Fuel & Motion Control Systems",
-    location: "Fort Collins CO · Loveland CO · Duarte CA · Simmern DE",
-    priority: "medium",
-    updated: "April 2026",
-    roles: "80+", revenue: 3.3,
-    signal: "Next-gen fuel control embedded SW · DO-178C DAL A/B · LEAP / GEnx fuel nozzle electronics · Fort Collins CO engineering hiring"
-  },
-  "curtisswright": {
-    name: "Curtiss-Wright",
-    sub: "Defense Electronics · Naval · Power · Industrial",
-    url: "https://curtisswright.salesbeakon.com/",
-    industry: "Defense Electronics",
-    location: "Parsippany NJ · Berwick PA · Ashburn VA · Bournemouth UK",
-    priority: "high",
-    updated: "April 2026",
-    roles: "100+", revenue: 3.0,
-    signal: "Rugged embedded computing for DoD · DO-178C avionics SW · Data recorders for military programs · Naval data handling systems"
-  },
   "gulfstream": {
     name: "Gulfstream Aerospace",
     sub: "G700 · G800 · G600 · G500 · G280 · Savannah Engineering",
@@ -1055,61 +923,6 @@ const ACCOUNTS = {
     revenue: 0.8,
     signal: "Echelon HA-480 wing assembly Feb 2025 · First flight 2026 · $55.7M facility expansion · 280 new hires · Zero India presence = Cyient gap"
   },
-  "northrop": {
-    name: "Northrop Grumman",
-    sub: "Aeronautics Systems · Defense Systems · Mission Systems · Space",
-    url: "https://northrop.salesbeakon.com/",
-    industry: "Aerospace & Defense",
-    location: "Falls Church VA · Palmdale CA · Bethpage NY · Melbourne FL",
-    priority: "high",
-    updated: "April 2026",
-    roles: "400+", revenue: 41.0,
-    signal: "B-21 Raider production ramp · E-2D Advanced Hawkeye · GBSD ICBM program · Autonomous systems SW (DO-178C) · Palmdale CA manufacturing surge"
-  },
-  "leonardo": {
-    name: "Leonardo DRS",
-    sub: "Ground Systems · Naval Systems · C4I · Sensors · Force Protection",
-    url: "https://leonardo.salesbeakon.com/",
-    industry: "Defense Electronics",
-    location: "Arlington VA · Melbourne FL · Salt Lake City UT · Cypress CA",
-    priority: "medium",
-    updated: "April 2026",
-    roles: "120+", revenue: 3.2,
-    signal: "US Army network modernization · SHORAD systems · Naval power conversion · Embedded SW for ground vehicles · Melbourne FL engineering growth"
-  },
-  "mercury": {
-    name: "Mercury Systems",
-    sub: "Processing · RF · Mission Computing · Secure Sensor Processing",
-    url: "https://mercury.salesbeakon.com/",
-    industry: "Defense Electronics",
-    location: "Andover MA · Phoenix AZ · Oxnard CA · Hudson NH",
-    priority: "high",
-    updated: "April 2026",
-    roles: "150+", revenue: 1.0,
-    signal: "DoD secure processing demand · Radar signal processing HW/SW · FPGA & embedded Linux · Trusted supplier program ramp · Andover MA engineering hiring"
-  },
-  "spirit": {
-    name: "Spirit AeroSystems",
-    sub: "Boeing Fuselages · Wichita Structures · Airbus A220 · Defense",
-    url: "https://spirit.salesbeakon.com/",
-    industry: "Aerospace Structures",
-    location: "Wichita KS · Tulsa OK · Kinston NC · Belfast UK",
-    priority: "high",
-    updated: "April 2026",
-    roles: "300+", revenue: 7.0,
-    signal: "Boeing reacquisition 2025 · 737 MAX fuselage quality ramp · FAA quality escape remediation · Wichita KS engineering surge · AS9100 compliance hiring"
-  },
-  "l3harris": {
-    name: "L3Harris Technologies",
-    sub: "Space & Airborne Systems · Communications · Integrated Mission · Aerojet",
-    url: "https://l3harris.salesbeakon.com/",
-    industry: "Defense Electronics",
-    location: "Melbourne FL · Greenville TX · Sunrise FL · Salt Lake City UT",
-    priority: "high",
-    updated: "April 2026",
-    roles: "350+", revenue: 21.3,
-    signal: "Space sensor systems ramp · JADC2 comms programs · DO-178C avionics SW · F-15EX electronic warfare · Melbourne FL hiring surge · ISR platform software"
-  }
 };
 
 // ════════════════════════════════════════════════
@@ -1130,16 +943,10 @@ const COMPANIES = {
     hq: "Hyderabad, India",
     tier: "active",
     // All accounts this company has subscribed to (BEAKON sales intelligence)
-    accounts: [
-      "textron","boeing","rtx","honeywell","ge",
-      "bombardier","embraer","bae","thales","parker",
-      "dhc","triumph","ametek","transdigm","jeppesen","gea",
-      "crane","safran","moog","woodward","curtisswright",
-      "gulfstream","hondaaircraft","northrop","leonardo","mercury","spirit","l3harris"
-    ]
+    accounts: ["textron", "boeing", "rtx", "honeywell", "ge", "bombardier", "embraer", "bae", "parker", "dhc", "gea", "crane", "gulfstream", "hondaaircraft"]
   }
   // Future paying clients:
-  // "company2": { name:"Company 2", tagline:"...", initial:"2", color:"#...", accent:"#...", hq:"...", tier:"active", accounts:[...] }
+  // "company2": { name:"Company 2", tagline:"...", initial:"2", color:"#...", accent:"#...", hq:"...", tier:"active", accounts: ["..."] }
 };
 
 // ════════════════════════════════════════════════
@@ -1441,7 +1248,7 @@ function showPortal(companyKey) {
     grid.innerHTML = '<div class="no-accounts"><div class="no-accounts-icon">&#128270;</div><div class="no-accounts-text">No accounts assigned yet.<br>Contact your BEAKON administrator.</div></div>';
   } else {
     // BEAKON sort: deployed+working tiles at top, planned at bottom
-    const _TIER = { boeing:1, rtx:1, honeywell:1, ge:1, embraer:1, parker:1, dhc:1, crane:1, gulfstream:1, hondaaircraft:1, textron:2, bae:2, bombardier:2 };
+    const _TIER = { boeing:1, rtx:1, honeywell:1, gea:1, embraer:1, parker:1, dhc:1, crane:1, gulfstream:1, hondaaircraft:1, textron:2, bae:2, bombardier:2 };
     const _seen = new Set();
     const _sorted = userAccounts
       .filter(k => { if (_seen.has(k)) return false; _seen.add(k); return true; })
