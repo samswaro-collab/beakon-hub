@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BEAKON — Signal to Signed | salesbeakon.com</title>
+<title>BEAKON â€” Signal to Signed | salesbeakon.com</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -29,11 +29,11 @@
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
 
-/* ── SCREENS ── */
+/* â”€â”€ SCREENS â”€â”€ */
 .screen{display:none;min-height:100vh;}
 .screen.active{display:flex;}
 
-/* ── LOGIN ── */
+/* â”€â”€ LOGIN â”€â”€ */
 #screen-login{align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,#1a1208 0%,#0b0d0f 70%);}
 .login-bg-rings{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
 .ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);border:1px solid rgba(245,158,11,0.10);border-radius:50%;}
@@ -63,7 +63,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .login-error{display:none;background:rgba(200,25,42,0.15);border:1px solid rgba(200,25,42,0.4);border-radius:7px;padding:10px 13px;font-size:12px;color:#f87171;margin-top:12px;text-align:center;}
 .login-footer{text-align:center;margin-top:20px;font-size:9px;color:var(--text3);white-space:nowrap;overflow:hidden;}
 
-/* ── PORTAL ── */
+/* â”€â”€ PORTAL â”€â”€ */
 #screen-portal{flex-direction:column;background:var(--bg);}
 .portal-header{background:rgba(10,22,40,0.96);border-bottom:1px solid var(--border);padding:0 28px;height:60px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);}
 .portal-brand{display:flex;align-items:center;gap:10px;}
@@ -91,7 +91,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .stat-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;}
 .section-label{font-size:10px;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
 
-/* ── ACCOUNT GRID ── */
+/* â”€â”€ ACCOUNT GRID â”€â”€ */
 .account-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
 .account-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all 0.25s;cursor:pointer;text-decoration:none;display:block;}
 .account-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:var(--card-shadow);}
@@ -115,7 +115,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .ac-open-btn{font-size:11px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:4px;}
 .ac-open-btn span{font-size:14px;}
 
-/* ── ADMIN PANEL ── */
+/* â”€â”€ ADMIN PANEL â”€â”€ */
 #screen-admin{flex-direction:column;}
 .admin-header{background:rgba(10,22,40,0.96);border-bottom:1px solid rgba(200,25,42,0.2);padding:0 28px;height:60px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;}
 .admin-title{font-size:15px;font-weight:800;color:#fff;letter-spacing:1px;}
@@ -146,7 +146,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .hash-output{margin-top:10px;background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:7px;padding:10px 12px;font-size:10px;color:var(--teal);font-family:monospace;word-break:break-all;display:none;}
 .hash-label{font-size:9px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;}
 
-/* ── MODALS ── */
+/* â”€â”€ MODALS â”€â”€ */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
 .modal-overlay.open{display:flex;}
 .modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:28px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,0.6);}
@@ -159,19 +159,19 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .msg-success{background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);color:#34d399;}
 .msg-error{background:rgba(200,25,42,0.12);border:1px solid rgba(200,25,42,0.3);color:#f87171;}
 
-/* ── ASSIGN MODAL ── */
+/* â”€â”€ ASSIGN MODAL â”€â”€ */
 .acc-assign-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:260px;overflow-y:auto;margin:14px 0;}
 .acc-assign-item{display:flex;align-items:center;gap:7px;padding:7px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;cursor:pointer;transition:all 0.15s;}
 .acc-assign-item.selected{border-color:var(--teal);background:rgba(0,212,200,0.07);}
 .acc-assign-item input{accent-color:var(--teal);}
 .acc-assign-label{font-size:11px;color:var(--text);font-weight:600;}
 
-/* ── MISC ── */
+/* â”€â”€ MISC â”€â”€ */
 .no-accounts{text-align:center;padding:60px 20px;color:var(--text3);}
 .no-accounts-icon{font-size:40px;margin-bottom:12px;}
 .no-accounts-text{font-size:13px;}
 
-/* ── COMPANIES SCREEN ── */
+/* â”€â”€ COMPANIES SCREEN â”€â”€ */
 #screen-companies{flex-direction:column;background:var(--bg);}
 .companies-body{flex:1;padding:32px 28px;}
 .companies-welcome{margin-bottom:28px;}
@@ -195,7 +195,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .company-tile-cta{font-size:12px;font-weight:700;color:var(--teal);}
 .company-tile-placeholder .company-tile-cta{color:var(--text3);}
 
-/* ── CYIENT ADMIN HUB ── */
+/* â”€â”€ CYIENT ADMIN HUB â”€â”€ */
 #screen-cyient-hub{flex-direction:column;background:var(--bg);}
 .cyient-hub-body{flex:1;padding:32px 28px;overflow-y:auto;}
 .cyient-hub-welcome{margin-bottom:32px;}
@@ -221,7 +221,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════ LOGIN ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• LOGIN â•â•â• -->
 <div id="screen-login" class="screen active">
   <div class="login-bg-rings">
     <div class="ring ring-1"></div><div class="ring ring-2"></div>
@@ -230,11 +230,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   <div class="login-card">
     <div class="beakon-logo">
       <div class="beakon-icon">
-        <!-- BEAKON Lighthouse Icon — bold, recognizable at all sizes -->
+        <!-- BEAKON Lighthouse Icon â€” bold, recognizable at all sizes -->
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Glow halo behind lamp -->
           <circle cx="40" cy="18" r="10" fill="#f59e0b" opacity="0.12"/>
-          <!-- Light beams — bold & fan-spread -->
+          <!-- Light beams â€” bold & fan-spread -->
           <path d="M40 16 L18 2"  stroke="#f59e0b" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
           <path d="M40 16 L29 1"  stroke="#f59e0b" stroke-width="2.5" opacity="0.70" stroke-linecap="round"/>
           <path d="M40 16 L40 0"  stroke="#f59e0b" stroke-width="2.5" opacity="0.85" stroke-linecap="round"/>
@@ -247,7 +247,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
           <circle cx="40" cy="20" r="2"   fill="#f59e0b"/>
           <!-- Gallery rail -->
           <rect x="30" y="24" width="20" height="3" rx="1.5" fill="#f59e0b" opacity="0.9"/>
-          <!-- Tower body — solid fill, clearly visible -->
+          <!-- Tower body â€” solid fill, clearly visible -->
           <path d="M34 27 L30 62 L50 62 L46 27 Z" fill="#f59e0b" opacity="0.28" stroke="#f59e0b" stroke-width="2"/>
           <!-- Tower band stripes -->
           <path d="M33 37 L47 37" stroke="#f59e0b" stroke-width="2" opacity="0.7"/>
@@ -271,7 +271,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <div class="form-group">
       <label class="form-label">Password</label>
       <div style="position:relative;display:block;">
-        <input id="login-pass" class="form-input" type="password" placeholder="••••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()" style="padding-right:44px;width:100%;">
+        <input id="login-pass" class="form-input" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()" style="padding-right:44px;width:100%;">
         <span onclick="togglePw()" id="pw-eye-btn" style="position:absolute;right:13px;top:50%;transform:translateY(-50%);cursor:pointer;line-height:1;user-select:none;font-size:16px;opacity:0.6;" title="Show/hide password">&#128065;</span>
       </div>
     </div>
@@ -285,7 +285,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════ PORTAL ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PORTAL â•â•â• -->
 <div id="screen-portal" class="screen" style="flex-direction:column;">
   <header class="portal-header">
     <div class="portal-brand">
@@ -324,7 +324,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   </div>
 </div>
 
-<!-- ══════════════════════════════════════ COMPANIES ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• COMPANIES â•â•â• -->
 <div id="screen-companies" class="screen" style="flex-direction:column;">
   <header class="portal-header">
     <div class="portal-brand">
@@ -362,7 +362,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════ ADMIN ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• ADMIN â•â•â• -->
 <div id="screen-admin" class="screen" style="flex-direction:column;">
   <header class="admin-header">
     <div class="portal-brand">
@@ -408,7 +408,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
           </div>
           <div class="form-row">
             <div><div class="form-label" style="font-size:10px;color:var(--teal);margin-bottom:5px;">Temp Password</div>
-            <input id="new-pass" class="form-input-sm" type="password" placeholder="••••••••"></div>
+            <input id="new-pass" class="form-input-sm" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"></div>
             <div><div class="form-label" style="font-size:10px;color:var(--teal);margin-bottom:5px;">Role</div>
             <select id="new-role" class="form-input-sm"><option value="am">Account Manager</option><option value="admin">Admin</option></select></div>
           </div>
@@ -441,7 +441,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   </div>
 </div>
 
-<!-- ═══════════════════════════════════ CYIENT ADMIN HUB ════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• CYIENT ADMIN HUB â•â•â•â• -->
 <div id="screen-cyient-hub" class="screen" style="flex-direction:column;">
   <header class="portal-header">
     <div class="portal-brand">
@@ -480,51 +480,51 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       <p>Select a Business Unit to explore Cyient's active intelligence accounts.</p>
     </div>
 
-    <!-- ── Transportation ── -->
+    <!-- â”€â”€ Transportation â”€â”€ -->
     <div class="bu-group">
       <div class="bu-group-header">
-        <div class="bu-group-icon" style="background:rgba(0,212,200,0.12);border:1px solid rgba(0,212,200,0.22);">✈️</div>
+        <div class="bu-group-icon" style="background:rgba(0,212,200,0.12);border:1px solid rgba(0,212,200,0.22);">âœˆï¸</div>
         <div>
           <div class="bu-group-name">Transportation</div>
-          <div class="bu-group-desc">Aerospace &amp; Defense · Automotive · Rail</div>
+          <div class="bu-group-desc">Aerospace &amp; Defense Â· Automotive Â· Rail</div>
         </div>
       </div>
       <div class="bu-cards">
-        <!-- A&D — ACTIVE -->
+        <!-- A&D â€” ACTIVE -->
         <div class="bu-card bu-card-active" onclick="showCyientAD()">
           <div class="bu-card-name">Aerospace &amp; Defense</div>
-          <div class="bu-card-sub">Bell · Boeing · RTX · Honeywell · GE Aerospace · Bombardier · Embraer · BAE · Parker · DHC · Crane · Gulfstream · Honda Aircraft</div>
+          <div class="bu-card-sub">Bell Â· Boeing Â· RTX Â· Honeywell Â· GE Aerospace Â· Bombardier Â· Embraer Â· BAE Â· Parker Â· DHC Â· Crane Â· Gulfstream Â· Honda Aircraft</div>
           <div class="bu-card-stat">13 Dashboards Active</div>
-          <div class="bu-card-cta">Open Accounts →</div>
+          <div class="bu-card-cta">Open Accounts â†’</div>
         </div>
-        <!-- Automotive — coming soon -->
+        <!-- Automotive â€” coming soon -->
         <div class="bu-card bu-card-soon">
           <div class="bu-card-name">Automotive</div>
-          <div class="bu-card-sub">EV platforms · OEM engineering · Tier-1 suppliers</div>
+          <div class="bu-card-sub">EV platforms Â· OEM engineering Â· Tier-1 suppliers</div>
           <div class="bu-card-soon-badge">Coming Soon</div>
         </div>
-        <!-- Rail — coming soon -->
+        <!-- Rail â€” coming soon -->
         <div class="bu-card bu-card-soon">
           <div class="bu-card-name">Rail</div>
-          <div class="bu-card-sub">Rolling stock · Signalling · Infrastructure engineering</div>
+          <div class="bu-card-sub">Rolling stock Â· Signalling Â· Infrastructure engineering</div>
           <div class="bu-card-soon-badge">Coming Soon</div>
         </div>
       </div>
     </div>
 
-    <!-- ── Network & Infrastructure ── -->
+    <!-- â”€â”€ Network & Infrastructure â”€â”€ -->
     <div class="bu-group">
       <div class="bu-group-header">
-        <div class="bu-group-icon" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.25);">📡</div>
+        <div class="bu-group-icon" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.25);">ðŸ“¡</div>
         <div>
           <div class="bu-group-name">Network &amp; Infrastructure</div>
-          <div class="bu-group-desc">Connectivity · Communications &amp; Sensor Integration</div>
+          <div class="bu-group-desc">Connectivity Â· Communications &amp; Sensor Integration</div>
         </div>
       </div>
       <div class="bu-cards">
         <div class="bu-card bu-card-soon">
           <div class="bu-card-name">Connectivity</div>
-          <div class="bu-card-sub">Telecom networks · 5G infrastructure · Satellite communications</div>
+          <div class="bu-card-sub">Telecom networks Â· 5G infrastructure Â· Satellite communications</div>
           <div class="bu-card-soon-badge">Coming Soon</div>
         </div>
         <div class="bu-card bu-card-soon">
@@ -535,29 +535,29 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       </div>
     </div>
 
-    <!-- ── Strategic Units ── -->
+    <!-- â”€â”€ Strategic Units â”€â”€ -->
     <div class="bu-group">
       <div class="bu-group-header">
-        <div class="bu-group-icon" style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.25);">⚡</div>
+        <div class="bu-group-icon" style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.25);">âš¡</div>
         <div>
           <div class="bu-group-name">Strategic Units</div>
-          <div class="bu-group-desc">Energy · Mining &amp; Minerals · Health &amp; Life Sciences</div>
+          <div class="bu-group-desc">Energy Â· Mining &amp; Minerals Â· Health &amp; Life Sciences</div>
         </div>
       </div>
       <div class="bu-cards">
         <div class="bu-card bu-card-soon">
           <div class="bu-card-name">Energy</div>
-          <div class="bu-card-sub">Oil &amp; gas · Renewables · Power utilities engineering</div>
+          <div class="bu-card-sub">Oil &amp; gas Â· Renewables Â· Power utilities engineering</div>
           <div class="bu-card-soon-badge">Coming Soon</div>
         </div>
         <div class="bu-card bu-card-soon">
           <div class="bu-card-name">Mining &amp; Minerals</div>
-          <div class="bu-card-sub">Mine planning · Asset management · Geospatial intelligence</div>
+          <div class="bu-card-sub">Mine planning Â· Asset management Â· Geospatial intelligence</div>
           <div class="bu-card-soon-badge">Coming Soon</div>
         </div>
         <div class="bu-card bu-card-soon">
           <div class="bu-card-name">H&amp;LS</div>
-          <div class="bu-card-sub">Health &amp; Life Sciences · Medical devices · Pharma engineering</div>
+          <div class="bu-card-sub">Health &amp; Life Sciences Â· Medical devices Â· Pharma engineering</div>
           <div class="bu-card-soon-badge">Coming Soon</div>
         </div>
       </div>
@@ -566,17 +566,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   </div>
 </div>
 
-<!-- ══════════════════════════════════ CHANGE PASSWORD MODAL ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• CHANGE PASSWORD MODAL â•â•â• -->
 <div class="modal-overlay" id="modal-changepw">
   <div class="modal-box">
     <div class="modal-title">Change Password</div>
     <div class="modal-sub">Your new password will take effect immediately this session.</div>
     <div class="form-group"><label class="form-label">Current Password</label>
-    <input id="cp-old" class="form-input" type="password" placeholder="••••••••"></div>
+    <input id="cp-old" class="form-input" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"></div>
     <div class="form-group"><label class="form-label">New Password</label>
-    <input id="cp-new" class="form-input" type="password" placeholder="••••••••"></div>
+    <input id="cp-new" class="form-input" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"></div>
     <div class="form-group"><label class="form-label">Confirm New Password</label>
-    <input id="cp-confirm" class="form-input" type="password" placeholder="••••••••"></div>
+    <input id="cp-confirm" class="form-input" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"></div>
     <div id="cp-msg" class="modal-msg"></div>
     <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:7px;padding:10px 12px;font-size:10px;color:#fbbf24;margin-top:12px;line-height:1.5;">
       &#9888; After changing, use the Admin &rarr; Password Hash Tool to generate your new hash and update the USERS config in the HTML to make the change permanent.
@@ -588,7 +588,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   </div>
 </div>
 
-<!-- ══════════════════════════════════ ASSIGN ACCOUNTS MODAL ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• ASSIGN ACCOUNTS MODAL â•â•â• -->
 <div class="modal-overlay" id="modal-assign">
   <div class="modal-box" style="max-width:500px;">
     <div class="modal-title">Assign Accounts</div>
@@ -602,12 +602,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 </div>
 
 <script>
-// ════════════════════════════════════════════════
-// BEAKON — USER + ACCOUNT CONFIG
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// BEAKON â€” USER + ACCOUNT CONFIG
 // Update USERS to add/change users. Use the Admin
 // Password Hash Tool to generate new hashes.
 // Default admin password: Beakon2026
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 const USERS = {
   "sam": {
@@ -753,186 +753,186 @@ const USERS = {
 const ACCOUNTS = {
   "textron": {
     name: "Textron Group",
-    sub: "Bell Flight · Textron Aviation · Textron Systems",
+    sub: "Bell Flight Â· Textron Aviation Â· Textron Systems",
     url: "https://textron.salesbeakon.com",
     token: "bkn7x2t9p4q1m8w3e6r0y5u",
     industry: "Aerospace & Defense",
-    location: "Fort Worth TX · Wichita KS · Bangalore IN",
+    location: "Fort Worth TX Â· Wichita KS Â· Bangalore IN",
     priority: "high",
     updated: "April 2026",
-    // buRoles drives the roles total — update these when dashboard hiring data changes
+    // buRoles drives the roles total â€” update these when dashboard hiring data changes
     buRoles: { "Bell Flight": 210, "Textron Aviation": 280, "Textron Systems": 35, "Textron India": 25 },
-    revenue: 13.7,   // $B — update when annual report changes
-    signal: "FLRAA production ramp · Cessna Denali Part 23 cert · Citation Ascend NPI"
+    revenue: 13.7,   // $B â€” update when annual report changes
+    signal: "FLRAA production ramp Â· Cessna Denali Part 23 cert Â· Citation Ascend NPI"
   },
   "boeing": {
     name: "Boeing",
-    sub: "BCA · BGS · BDS · Spirit · BIETC · BETC · Wisk · AvionX · Aurora · Insitu",
+    sub: "BCA Â· BGS Â· BDS Â· Spirit Â· BIETC Â· BETC Â· Wisk Â· AvionX Â· Aurora Â· Insitu",
     url: "https://boeing.salesbeakon.com/",
     token: "boe3n4g7f1x8p2q5m0w6e9r",
     industry: "Aerospace & Defense",
-    location: "Seattle WA · St. Louis MO · Cambridge MA · Wichita KS",
+    location: "Seattle WA Â· St. Louis MO Â· Cambridge MA Â· Wichita KS",
     priority: "high",
     updated: "April 2026",
     buRoles: { "BCA": 921, "Spirit AeroSystems": 107, "International": 145, "BGS": 50, "BDS": 75, "Wisk/AvionX": 52, "Aurora": 60, "Insitu": 50 },
     revenue: 66.5,
-    signal: "737 MAX North Line · 777X FAA cert · Aurora X-65 DARPA · Insitu RQ-21 Blackjack"
+    signal: "737 MAX North Line Â· 777X FAA cert Â· Aurora X-65 DARPA Â· Insitu RQ-21 Blackjack"
   },
   "rtx": {
     name: "RTX Corporation",
-    sub: "Collins Aerospace · Pratt & Whitney · Raytheon",
+    sub: "Collins Aerospace Â· Pratt & Whitney Â· Raytheon",
     url: "https://rtx.salesbeakon.com",
     token: "rkn5v8n2j6h3f0d4s9a7l1",
     industry: "Aerospace & Defense",
-    location: "Arlington VA · Windsor Locks CT · Tucson AZ",
+    location: "Arlington VA Â· Windsor Locks CT Â· Tucson AZ",
     priority: "high",
     updated: "April 2026",
-    // buRoles drives the roles total — update these when dashboard hiring data changes
+    // buRoles drives the roles total â€” update these when dashboard hiring data changes
     buRoles: { "Collins Aerospace": 2100, "Pratt & Whitney": 1200, "Raytheon M&D": 600 },
-    revenue: 80.7,   // $B — update when annual report changes
-    signal: "GTF engine MRO ramp · Collins avionics upgrades · NGAD supply chain"
+    revenue: 80.7,   // $B â€” update when annual report changes
+    signal: "GTF engine MRO ramp Â· Collins avionics upgrades Â· NGAD supply chain"
   },
   "honeywell": {
     name: "Honeywell Aerospace",
-    sub: "Aerospace Technologies · Defense & Space · HTI Bangalore · HCE",
+    sub: "Aerospace Technologies Â· Defense & Space Â· HTI Bangalore Â· HCE",
     url: "https://honeywell.salesbeakon.com/",
     token: "hwl4a9j2p7k5n1m3w8e6r0q",
     industry: "Aerospace Systems",
-    location: "Phoenix AZ · Tempe AZ · Clearfield UT · Bangalore IN",
+    location: "Phoenix AZ Â· Tempe AZ Â· Clearfield UT Â· Bangalore IN",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Aerospace Technologies": 280, "HTI Bangalore": 200, "Defense & Space": 90, "HCE / Forge": 60, "PMT": 30 },
     revenue: 14.8,
-    signal: "Anthem avionics platform · APU production ramp · HTI Bengaluru expansion · eVTOL avionics (Joby/Archer)"
+    signal: "Anthem avionics platform Â· APU production ramp Â· HTI Bengaluru expansion Â· eVTOL avionics (Joby/Archer)"
   },
   "parker": {
     name: "Parker Aerospace",
-    sub: "Flight Control · Fuel Systems · Hydraulics · Engine Systems",
+    sub: "Flight Control Â· Fuel Systems Â· Hydraulics Â· Engine Systems",
     url: "https://parker.salesbeakon.com/",
     token: "prk2j5p9n7k3x1m8w4e0r6q",
     industry: "Aerospace Systems",
-    location: "Irvine CA · Ogden UT · Hazel Park MI",
+    location: "Irvine CA Â· Ogden UT Â· Hazel Park MI",
     priority: "medium",
     updated: "January 2026",
     roles: "60+", revenue: 19.8,
-    signal: "787 hydraulics sustainment · F-35 fuel system · UAM actuation systems"
+    signal: "787 hydraulics sustainment Â· F-35 fuel system Â· UAM actuation systems"
   },
   "dhc": {
     name: "De Havilland Canada",
-    sub: "DHC-515 Firefighter · Q400 Restart · Twin Otter Series 400",
+    sub: "DHC-515 Firefighter Â· Q400 Restart Â· Twin Otter Series 400",
     url: "https://dhc.salesbeakon.com/",
     token: "dhc5k2r9j6p1m8w3n0e4t7q",
     industry: "Regional Aviation",
-    location: "Calgary AB · Strathmore AB · Downsview ON",
+    location: "Calgary AB Â· Strathmore AB Â· Downsview ON",
     priority: "high",
     updated: "April 2026",
     buRoles: { "DHC-515 Program (Strathmore AB)": 80, "Q400 Restart Engineering": 50, "Twin Otter Support": 20 },
     revenue: 0.38,
-    signal: "DHC-515 first assembly Mar 2026 · 20+ firm orders (Greece/Croatia/Alberta) · Q400 production restart 2027 · Twin Otter 1,000th delivery Mar 2026 · Zero India presence"
+    signal: "DHC-515 first assembly Mar 2026 Â· 20+ firm orders (Greece/Croatia/Alberta) Â· Q400 production restart 2027 Â· Twin Otter 1,000th delivery Mar 2026 Â· Zero India presence"
   },
   "gea": {
     name: "GE Aerospace",
-    sub: "Commercial Engines · Defense & Propulsion · JFWTC Bangalore · CFM RISE",
+    sub: "Commercial Engines Â· Defense & Propulsion Â· JFWTC Bangalore Â· CFM RISE",
     url: "https://geaerospace.salesbeakon.com/",
     token: "gea7l2p8n5j3k0x9m4w1e6r",
     industry: "Aerospace & Defense",
-    location: "Evendale OH · Lynn MA · Wilmington NC · Bangalore IN",
+    location: "Evendale OH Â· Lynn MA Â· Wilmington NC Â· Bangalore IN",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Commercial Engines (CES)": 450, "JFWTC Bangalore": 150, "Defense & Propulsion": 180, "Manufacturing (Wilmington/Madisonville)": 120 },
     revenue: 38.7,
-    signal: "LEAP ramp → 2,500/yr by 2028 · GE9X / 777X cert sprint · T408 $1.4B NAVAIR contract · JFWTC Bangalore expansion"
+    signal: "LEAP ramp â†’ 2,500/yr by 2028 Â· GE9X / 777X cert sprint Â· T408 $1.4B NAVAIR contract Â· JFWTC Bangalore expansion"
   },
   "bae": {
     name: "BAE Systems",
-    sub: "Air · Electronic Systems · Maritime · Cyber & Intelligence · Platforms",
+    sub: "Air Â· Electronic Systems Â· Maritime Â· Cyber & Intelligence Â· Platforms",
     url: "https://bae.salesbeakon.com/",
     token: "bae5j1p7x4n9k3m8w2e0r6q",
     industry: "Aerospace & Defense",
-    location: "Farnborough UK · Nashua NH · Sterling VA · Fort Wayne IN · Endicott NY",
+    location: "Farnborough UK Â· Nashua NH Â· Sterling VA Â· Fort Wayne IN Â· Endicott NY",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Air (Eurofighter/F-35)": 3400, "Electronic Systems (US)": 1970, "Maritime": 2842, "Cyber & Intelligence": 1316, "Platforms & Services": 1430 },
     revenue: 30.7,
-    signal: "F-35 LRIP 17+ · Eurofighter Typhoon export (India MMRCA2) · HALO/HAGO cyber programs · £83.6B record backlog · No Hyderabad presence = strategic gap"
+    signal: "F-35 LRIP 17+ Â· Eurofighter Typhoon export (India MMRCA2) Â· HALO/HAGO cyber programs Â· Â£83.6B record backlog Â· No Hyderabad presence = strategic gap"
   },
   "bombardier": {
     name: "Bombardier",
-    sub: "Global 7500/8000 · Challenger 3500 · Defense (BACN/HADES) · Learjet MRO",
+    sub: "Global 7500/8000 Â· Challenger 3500 Â· Defense (BACN/HADES) Â· Learjet MRO",
     url: "https://bombardier.salesbeakon.com/",
     token: "bdr3n7p5k2j9x0m6w4e8r1q",
     industry: "Business Aviation",
-    location: "Montreal QC · Wichita KS · Red Oak TX · Melbourne FL · Bangalore IN",
+    location: "Montreal QC Â· Wichita KS Â· Red Oak TX Â· Melbourne FL Â· Bangalore IN",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Montreal Engineering CoE": 200, "Wichita KS (Defense/MRO)": 100, "Red Oak TX (Completions)": 30, "Bangalore IN (Engineering)": 20 },
     revenue: 9.3,
-    signal: "Global 8000 FAA cert Dec 2025 → EIS 2026 · $17.5B record backlog · TCS SAP S/4HANA program · No Hyderabad engineering center = Cyient gap"
+    signal: "Global 8000 FAA cert Dec 2025 â†’ EIS 2026 Â· $17.5B record backlog Â· TCS SAP S/4HANA program Â· No Hyderabad engineering center = Cyient gap"
   },
   "embraer": {
     name: "Embraer",
-    sub: "E-Jet E2 · C-390 Defense · Executive Jets · Eve eVTOL",
+    sub: "E-Jet E2 Â· C-390 Defense Â· Executive Jets Â· Eve eVTOL",
     url: "https://embraer.salesbeakon.com/",
     token: "emb6r2j8p4n1k7x3m5w9e0q",
     industry: "Commercial & Defense Aviation",
-    location: "São José dos Campos BR · Melbourne FL · Nashville TN · New Delhi IN",
+    location: "SÃ£o JosÃ© dos Campos BR Â· Melbourne FL Â· Nashville TN Â· New Delhi IN",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Commercial Eng (SJC Brazil)": 300, "Melbourne FL (ExecJets/Eve)": 150, "Nashville TN (MRO)": 40, "New Delhi IN (India Rep)": 10 },
     revenue: 7.6,
-    signal: "Eve eVTOL maiden flight Dec 2025 · C-390 India campaign (Adani + Mahindra) · $31.6B record backlog · E2 ramp · India office Oct 2025 = strategic entry now"
+    signal: "Eve eVTOL maiden flight Dec 2025 Â· C-390 India campaign (Adani + Mahindra) Â· $31.6B record backlog Â· E2 ramp Â· India office Oct 2025 = strategic entry now"
   },
 
-  // ── PLANNED / NEXT-BUILD ACCOUNTS ──────────────────────────────────────────
+  // â”€â”€ PLANNED / NEXT-BUILD ACCOUNTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   "crane": {
     name: "Crane Aerospace & Electronics",
-    sub: "ELDEC Sensing · Hydro-Aire Landing · Interpoint Power · Vian Electronics",
+    sub: "ELDEC Sensing Â· Hydro-Aire Landing Â· Interpoint Power Â· Vian Electronics",
     url: "https://crane.salesbeakon.com/",
     token: "cra8n2j5p0x7m4w9e1r6t3q",
     industry: "Aerospace Components",
-    location: "Lynnwood WA · Burbank CA · Redmond WA · Elyria OH",
+    location: "Lynnwood WA Â· Burbank CA Â· Redmond WA Â· Elyria OH",
     priority: "high",
     updated: "April 2026",
     buRoles: { "ELDEC Sensing (Lynnwood WA)": 60, "Hydro-Aire Landing (Burbank CA)": 70, "Interpoint Power (Redmond WA)": 40, "Vian Electronics (CO)": 30 },
     revenue: 0.76,
-    signal: "$864M backlog +23% · Vian acquisition Jan 2024 · F-35 BCS ramp · New CEO Alex Alcala Apr 2026 · DO-178C embedded SW demand"
+    signal: "$864M backlog +23% Â· Vian acquisition Jan 2024 Â· F-35 BCS ramp Â· New CEO Alex Alcala Apr 2026 Â· DO-178C embedded SW demand"
   },
   "gulfstream": {
     name: "Gulfstream Aerospace",
-    sub: "G700 · G800 · G600 · G500 · G280 · Savannah Engineering",
+    sub: "G700 Â· G800 Â· G600 Â· G500 Â· G280 Â· Savannah Engineering",
     url: "https://gulfstream.salesbeakon.com/",
     token: "gst4p9x2k7m1n8q3w6e0r5y",
     industry: "Business Aviation",
-    location: "Savannah GA · Dallas TX · Long Beach CA · Farnborough UK",
+    location: "Savannah GA Â· Dallas TX Â· Long Beach CA Â· Farnborough UK",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Savannah GA Engineering": 200, "Brunswick GA Structures": 80, "Dallas TX Completions": 40, "Service Centers": 30 },
     revenue: 13.11,
-    signal: "G800 first delivery Aug 2025 · $21.83B backlog · 158 deliveries FY2025 · No India engineering center = Cyient gap"
+    signal: "G800 first delivery Aug 2025 Â· $21.83B backlog Â· 158 deliveries FY2025 Â· No India engineering center = Cyient gap"
   },
   "hondaaircraft": {
     name: "Honda Aircraft Company",
-    sub: "HondaJet Elite II · Echelon HA-480 (development) · GE Honda HF120",
+    sub: "HondaJet Elite II Â· Echelon HA-480 (development) Â· GE Honda HF120",
     url: "https://hondaaircraft.salesbeakon.com/",
     token: "hac6r1t8j3p5m2n9w4e7q0k",
     industry: "Business Aviation",
-    location: "Greensboro NC · Burlington NC",
+    location: "Greensboro NC Â· Burlington NC",
     priority: "high",
     updated: "April 2026",
     buRoles: { "Greensboro NC Engineering": 180, "GE Honda JV Burlington NC": 60, "Echelon HA-480 Program": 40 },
     revenue: 0.8,
-    signal: "Echelon HA-480 wing assembly Feb 2025 · First flight 2026 · $55.7M facility expansion · 280 new hires · Zero India presence = Cyient gap"
+    signal: "Echelon HA-480 wing assembly Feb 2025 Â· First flight 2026 Â· $55.7M facility expansion Â· 280 new hires Â· Zero India presence = Cyient gap"
   },
 };
 
-// ════════════════════════════════════════════════
-// COMPANIES — Multi-tenant company registry
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// COMPANIES â€” Multi-tenant company registry
 // Each company is a paying client of BEAKON.
 // "accounts" lists which ACCOUNTS keys this company
 // has subscribed to for sales intelligence.
 // To onboard a new company: add an entry here,
 // assign users to it via company: "key", and deploy.
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 const COMPANIES = {
   "cyient": {
     name: "Cyient",
@@ -949,10 +949,10 @@ const COMPANIES = {
   // "company2": { name:"Company 2", tagline:"...", initial:"2", color:"#...", accent:"#...", hq:"...", tier:"active", accounts: ["..."] }
 };
 
-// ════════════════════════════════════════════════
-// COMPUTE ROLES FROM BU BREAKDOWN (dynamic — no hardcoded totals)
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// COMPUTE ROLES FROM BU BREAKDOWN (dynamic â€” no hardcoded totals)
 // When dashboard hiring data changes, update buRoles{} above and redeploy hub.
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 (function computeRoles() {
   Object.values(ACCOUNTS).forEach(function(a) {
     if (a.buRoles && typeof a.buRoles === 'object') {
@@ -960,27 +960,27 @@ const COMPANIES = {
       a.roles = total + '+';
       // Build tooltip-friendly breakdown string
       a.rolesBreakdown = Object.entries(a.buRoles)
-        .map(function(e){ return e[0] + ': ' + e[1] + '+'; }).join(' · ');
+        .map(function(e){ return e[0] + ': ' + e[1] + '+'; }).join(' Â· ');
     }
   });
 })();
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // SESSION STATE
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 let SESSION = { user: null, hash: null, assigningUser: null };
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // CRYPTO
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 async function sha256(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
   return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // AUTH
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function togglePw() {
   const inp = document.getElementById('login-pass');
   const btn = document.getElementById('pw-eye-btn');
@@ -1024,14 +1024,14 @@ async function doLogin() {
     company: user.company || 'cyient',
     clearanceAccess: user.clearanceAccess === true
   }));
-  // Route by role: clientadmin → Cyient BU hub; AM with 1 account → direct dashboard; admin → companies hub
+  // Route by role: clientadmin â†’ Cyient BU hub; AM with 1 account â†’ direct dashboard; admin â†’ companies hub
   if (user.role === 'clientadmin') { showCyientHub(); }
   else if (!redirectIfSingleAccount(user)) showCompanies();
 }
 
-// ── BEAKON: AM direct-to-dashboard redirect ──────────────────────────
+// â”€â”€ BEAKON: AM direct-to-dashboard redirect â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // If the logged-in user is an AM with exactly 1 account, send them straight
-// to that dashboard — no hub screens to click through.
+// to that dashboard â€” no hub screens to click through.
 function redirectIfSingleAccount(userObj) {
   if (!userObj || userObj.role === 'admin' || userObj.role === 'clientadmin') return false;
   const accts = userObj.accounts || [];
@@ -1049,7 +1049,7 @@ function redirectIfSingleAccount(userObj) {
 function doLogout() {
   sessionStorage.removeItem('beakon_session');
   SESSION = {user:null,hash:null,assigningUser:null};
-  // Redirect to login with key param preserved — prevents encryption wrapper
+  // Redirect to login with key param preserved â€” prevents encryption wrapper
   // from showing its own unlock screen if user refreshes after logout
   const url = new URL(window.location.href);
   if (!url.searchParams.get('key')) {
@@ -1060,17 +1060,17 @@ function doLogout() {
   window.location.replace(cleanUrl);
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // SCREENS
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // COMPANIES SCREEN
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function showCompanies() {
   const sess = SESSION.user ? USERS[SESSION.user] : JSON.parse(sessionStorage.getItem('beakon_session')||'null');
   if (!sess) { showScreen('screen-login'); return; }
@@ -1094,7 +1094,7 @@ function showCompanies() {
     hdr.appendChild(ab);
   }
 
-  // Greeting — always use first name (no team-name confusion)
+  // Greeting â€” always use first name (no team-name confusion)
   const hr = new Date().getHours();
   const firstName = (uname||'there').split(' ')[0];
   document.getElementById('companies-greeting').textContent =
@@ -1112,7 +1112,7 @@ function showCompanies() {
       : `You have access to ${userCompanyKeys.length} company workspaces. Select one to view its accounts.`;
 
   // BEAKON_AM_SKIP_COMPANIES
-  // AM users with a single company go straight to their account list — skip company tile screen
+  // AM users with a single company go straight to their account list â€” skip company tile screen
   if (role !== 'admin' && userCompanyKeys.length === 1) {
     showPortal(userCompanyKeys[0]);
     return;
@@ -1156,7 +1156,7 @@ function showCompanies() {
             <div class="company-tile-tagline" style="color:var(--text3);">Onboard a new client</div>
           </div>
         </div>
-        <div style="font-size:11px;color:var(--text3);line-height:1.6;">When you onboard a new paying customer, their dedicated company workspace will appear here — with their own account team, subscribed accounts, and sales intel hub.</div>
+        <div style="font-size:11px;color:var(--text3);line-height:1.6;">When you onboard a new paying customer, their dedicated company workspace will appear here â€” with their own account team, subscribed accounts, and sales intel hub.</div>
         <div class="company-tile-cta">Contact Beakon to Onboard &rarr;</div>
       </div>`;
     });
@@ -1196,13 +1196,13 @@ function showPortal(companyKey) {
 
   const hdr = document.getElementById('portal-header-actions');
   hdr.innerHTML = '';
-  // Back button: admin → Companies hub; clientadmin → Cyient BU hub; AM → Sign Out
+  // Back button: admin â†’ Companies hub; clientadmin â†’ Cyient BU hub; AM â†’ Sign Out
   // BEAKON_AM_BACK_PATCHED
   const bb = document.createElement('button');
   if (role === 'admin') {
-    bb.className='portal-btn'; bb.textContent='← Companies'; bb.onclick=showCompanies;
+    bb.className='portal-btn'; bb.textContent='â† Companies'; bb.onclick=showCompanies;
   } else if (role === 'clientadmin') {
-    bb.className='portal-btn portal-btn-teal'; bb.textContent='← BU Hub'; bb.onclick=showCyientHub;
+    bb.className='portal-btn portal-btn-teal'; bb.textContent='â† BU Hub'; bb.onclick=showCyientHub;
   } else {
     bb.className='portal-btn';
     bb.textContent='Sign Out';
@@ -1218,11 +1218,11 @@ function showPortal(companyKey) {
     hdr.appendChild(ab);
   }
 
-  // Greeting — use company name, not the user's team assignment
+  // Greeting â€” use company name, not the user's team assignment
   const hr = new Date().getHours();
   const companyLabel = company ? company.name : 'Your';
   document.getElementById('portal-greeting').textContent =
-    `Good ${hr<12?'morning':hr<17?'afternoon':'evening'} — ${companyLabel} Accounts`;
+    `Good ${hr<12?'morning':hr<17?'afternoon':'evening'} â€” ${companyLabel} Accounts`;
   document.getElementById('portal-subtitle').textContent = userAccounts.length===0
     ? 'No accounts assigned yet. Contact your administrator.'
     : `${companyLabel} has ${userAccounts.length} account${userAccounts.length>1?'s':''} in BEAKON. Click any card to open its intelligence dashboard.`;
@@ -1248,7 +1248,7 @@ function showPortal(companyKey) {
     grid.innerHTML = '<div class="no-accounts"><div class="no-accounts-icon">&#128270;</div><div class="no-accounts-text">No accounts assigned yet.<br>Contact your BEAKON administrator.</div></div>';
   } else {
     // BEAKON sort: deployed+working tiles at top, planned at bottom
-    const _TIER = { boeing:1, rtx:1, honeywell:1, gea:1, embraer:1, parker:1, dhc:1, crane:1, gulfstream:1, hondaaircraft:1, textron:2, bae:2, bombardier:2, neon:3, ametek:3, transdigm:3, jeppesen:3 };
+    const _TIER = { boeing:1, rtx:1, honeywell:1, gea:1, embraer:1, parker:1, dhc:1, crane:1, gulfstream:1, hondaaircraft:1, textron:2, bae:2, bombardier:2, neon:1, ametek:1, transdigm:1, jeppesen:1 };
     const _seen = new Set();
     const _sorted = userAccounts
       .filter(k => { if (_seen.has(k)) return false; _seen.add(k); return true; })
@@ -1270,7 +1270,7 @@ function showPortal(companyKey) {
           </div>
           <div class="ac-tags">
             <span class="ac-tag">${a.industry}</span>
-            <span class="ac-tag">&#128205; ${a.location.split('·')[0].trim()}</span>
+            <span class="ac-tag">&#128205; ${a.location.split('Â·')[0].trim()}</span>
           </div>
         </div>
         <div class="ac-body">
@@ -1297,9 +1297,9 @@ function showAdmin() {
   showScreen('screen-admin');
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // CYIENT CLIENT ADMIN HUB
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function showCyientHub() {
   const sess = SESSION.user ? USERS[SESSION.user] : JSON.parse(sessionStorage.getItem('beakon_session')||'null');
   if (!sess) { showScreen('screen-login'); return; }
@@ -1314,14 +1314,14 @@ function showCyientHub() {
   showScreen('screen-cyient-hub');
 }
 
-// A&D card click — show the full Cyient A&D account grid
+// A&D card click â€” show the full Cyient A&D account grid
 function showCyientAD() {
   showPortal('cyient');
 }
 
-// ════════════════════════════════════════════════
-// ADMIN — USER LIST
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ADMIN â€” USER LIST
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function renderUserList() {
   const el = document.getElementById('user-list');
   const entries = Object.entries(USERS);
@@ -1355,9 +1355,9 @@ function renderAccountRegistry() {
     </div>`).join('');
 }
 
-// ════════════════════════════════════════════════
-// ADMIN — ADD USER
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ADMIN â€” ADD USER
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function showAddUser() { document.getElementById('add-user-panel').style.display='block'; }
 function hideAddUser() { document.getElementById('add-user-panel').style.display='none'; }
 
@@ -1377,9 +1377,9 @@ async function addUserToSession() {
   renderUserList();
 }
 
-// ════════════════════════════════════════════════
-// ADMIN — ASSIGN ACCOUNTS
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ADMIN â€” ASSIGN ACCOUNTS
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function openAssignModal(userKey) {
   SESSION.assigningUser = userKey;
   const u = USERS[userKey];
@@ -1408,9 +1408,9 @@ function saveAssignment() {
   closeModal('modal-assign');
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // PASSWORD CHANGE
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 async function doChangePassword() {
   const old = document.getElementById('cp-old').value;
   const nw  = document.getElementById('cp-new').value;
@@ -1426,9 +1426,9 @@ async function doChangePassword() {
   showMsg(msg,'success','Password updated this session. Use Admin Panel to generate the hash and update the HTML config permanently.');
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // HASH TOOL
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 async function generateHash() {
   const val = document.getElementById('hash-input').value;
   if (!val) return;
@@ -1437,21 +1437,21 @@ async function generateHash() {
   document.getElementById('hash-val').textContent = h;
 }
 
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // MODALS + UTILS
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-function toggleUserMenu() { /* password change disabled — fixed credentials in use */ }
+function toggleUserMenu() { /* password change disabled â€” fixed credentials in use */ }
 function showMsg(el, type, text) {
   el.className = 'modal-msg ' + (type==='success'?'msg-success':'msg-error');
   el.textContent = text;
   el.style.display = 'block';
 }
 
-// ════════════════════════════════════════════════
-// INIT — restore session on reload + Remember Me
-// ════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// INIT â€” restore session on reload + Remember Me
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 (function(){
   // 1. Restore active session (tab/window still open)
   const sess = sessionStorage.getItem('beakon_session');
