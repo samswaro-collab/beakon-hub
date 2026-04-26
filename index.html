@@ -624,7 +624,7 @@ const USERS = {
     role: "clientadmin",
     // SHA-256 of "CyientAdmin2026"
     hash: "c0d9662b471241523fbca237dde710f997acd1786ea51dd14ef6d568ffde6794",
-    accounts: ["textron", "boeing", "rtx", "honeywell", "parker", "dhc", "gea", "bae", "bombardier", "embraer", "crane", "gulfstream", "hondaaircraft"],          // sees all cyient accounts via BU hub
+    accounts: ["textron", "boeing", "rtx", "honeywell", "parker", "dhc", "gea", "bae", "bombardier", "embraer", "crane", "gulfstream", "hondaaircraft", "neon", "ametek", "transdigm", "jeppesen"],          // sees all cyient accounts via BU hub
     company: "cyient",
     clearanceAccess: false
   },
@@ -742,6 +742,42 @@ const USERS = {
     // SHA-256 of "Embraer2026"
     hash: "799db75433fe2eab82f43f59cc0283cef0051d02b9446b922b86e62465605888",
     accounts: ["embraer"],
+    company: "cyient",
+    clearanceAccess: false
+  },
+  "neon.am": {
+    name: "Neon Account Manager",
+    role: "am",
+    // SHA-256 of "Neon2026"
+    hash: "7db8e0ce5d1a94a2f117f333681f7a7894f30d4fbca3585187f9c3ded1b56d27",
+    accounts: ["neon"],
+    company: "cyient",
+    clearanceAccess: false
+  },
+  "ametek.am": {
+    name: "AMETEK Account Manager",
+    role: "am",
+    // SHA-256 of "Ametek2026"
+    hash: "22a6fe8b54046fcec04b93262d00e49d54966b269bc5f88d982bfee076de2d5e",
+    accounts: ["ametek"],
+    company: "cyient",
+    clearanceAccess: false
+  },
+  "transdigm.am": {
+    name: "TransDigm Account Manager",
+    role: "am",
+    // SHA-256 of "Transdigm2026"
+    hash: "4c527beb1e72a607318b16e6eda6d273aade390d44828f61a23a6aa5c71435a5",
+    accounts: ["transdigm"],
+    company: "cyient",
+    clearanceAccess: false
+  },
+  "jeppesen.am": {
+    name: "Jeppesen Account Manager",
+    role: "am",
+    // SHA-256 of "Jeppesen2026"
+    hash: "c3a4701f79840ed9aa33848d73f7ea2f433d1d2b97f489fab91f1e6ac7f0cd09",
+    accounts: ["jeppesen"],
     company: "cyient",
     clearanceAccess: false
   }
@@ -923,6 +959,58 @@ const ACCOUNTS = {
     revenue: 0.8,
     signal: "Echelon HA-480 wing assembly Feb 2025 Â· First flight 2026 Â· $55.7M facility expansion Â· 280 new hires Â· Zero India presence = Cyient gap"
   },
+  "neon": {
+    name: "Neon Aerospace",
+    sub: "Smart Actuators Â· Propellers Â· AI Platform",
+    url: "https://neon.salesbeakon.com/",
+    token: "neo8n5x2k1j7p4m0w9e3r6q",
+    industry: "AAM / eVTOL Tier-1 Supplier",
+    location: "Irvine CA",
+    priority: "high",
+    updated: "April 2026",
+    buRoles: { "Smart Actuators": 2, "AI/ML Platform": 1, "Data Platform": 1 },
+    revenue: 0.01,
+    signal: "Founded Jan 2025 Â· 4 architect roles open Â· Pre-Series A window Â· Day-1 ER&D framework partnership opportunity"
+  },
+  "ametek": {
+    name: "AMETEK",
+    sub: "EIG Aerospace & Defense Â· EMG Aerospace Components Â· Hughes-Treitler Â· Spectro Scientific",
+    url: "https://ametek.salesbeakon.com/",
+    token: "ame4n7p2k9j5x3m1w8e6r0q",
+    industry: "Aerospace Components Â· Tier-2/3 Supplier",
+    location: "Berwyn PA Â· Wilmington MA Â· Costa Mesa CA Â· Phoenix AZ",
+    priority: "high",
+    updated: "April 2026",
+    buRoles: { "EIG Aerospace & Defense": 50, "EMG Aerospace Components": 25, "Hughes-Treitler": 15, "Spectro MRO": 10 },
+    revenue: 7.0,
+    signal: "Aerospace power firmware modernization Â· Spectro engine MRO oil analytics cloud migration Â· Hughes-Treitler thermal FEA Â· F-35 BCS rampÂ· Multi-OEM Tier-2 exposure"
+  },
+  "transdigm": {
+    name: "TransDigm Group",
+    sub: "Power & Control Â· Airframe Â· Whippany Actuation Â· 50+ niche component subsidiaries",
+    url: "https://transdigm.salesbeakon.com/",
+    token: "tdg5p9k2n7m3j8x1w4e6r0q",
+    industry: "Highly Engineered Aerospace Components",
+    location: "Cleveland OH (HQ) Â· 50+ subsidiary sites globally",
+    priority: "high",
+    updated: "April 2026",
+    buRoles: { "Power & Control Engineering": 200, "Airframe Engineering": 150, "Whippany Actuation Integration": 80 },
+    revenue: 8.0,
+    signal: "Whippany Actuation acquisition Â· S1000D consolidation across 50+ subsidiaries Â· Lisman Co-CEO transition Â· ~50% operating margin (highest in A&D) Â· Roll-up integration window"
+  },
+  "jeppesen": {
+    name: "Jeppesen",
+    sub: "Navigation Data Â· Flight Ops Software Â· GA & Pilot Apps Â· Predictive Analytics Â· Carmen / Aviolinx / AerData / ForeFlight",
+    url: "https://jeppesen.salesbeakon.com/",
+    token: "jep7n2k5p9j3x1m8w4e6r0q",
+    industry: "Aviation Software Â· PE-backed (Thoma Bravo)",
+    location: "Englewood CO (HQ) Â· Boulder CO Â· Crawley UK Â· Singapore",
+    priority: "high",
+    updated: "April 2026",
+    buRoles: { "Navigation Data Eng": 100, "Flight Ops Software": 80, "GA & Pilot Apps": 50, "Predictive Analytics / AI": 40 },
+    revenue: 1.5,
+    signal: "Thoma Bravo PE acquisition Aug 2024 Â· SaaS transformation Â· Carmen + Aviolinx + AerData + ForeFlight subsidiaries Â· Cloud + AI/ML modernization Â· Standalone PE-backed agility window"
+  },
 };
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -943,7 +1031,7 @@ const COMPANIES = {
     hq: "Hyderabad, India",
     tier: "active",
     // All accounts this company has subscribed to (BEAKON sales intelligence)
-    accounts: ["textron", "boeing", "rtx", "honeywell", "ge", "bombardier", "embraer", "bae", "parker", "dhc", "gea", "crane", "gulfstream", "hondaaircraft"]
+    accounts: ["textron", "boeing", "rtx", "honeywell", "gea", "bombardier", "embraer", "bae", "parker", "dhc", "crane", "gulfstream", "hondaaircraft", "neon", "ametek", "transdigm", "jeppesen"]
   }
   // Future paying clients:
   // "company2": { name:"Company 2", tagline:"...", initial:"2", color:"#...", accent:"#...", hq:"...", tier:"active", accounts: ["..."] }
@@ -1367,128 +1455,4 @@ async function addUserToSession() {
   const pass = document.getElementById('new-pass').value;
   const role = document.getElementById('new-role').value;
   const msg  = document.getElementById('add-user-msg');
-  if (!name||!user||!pass) { showMsg(msg,'error','Please fill in all fields.'); return; }
-  if (USERS[user]) { showMsg(msg,'error','Username already exists.'); return; }
-  const hash = await sha256(pass);
-  USERS[user] = { name, role, hash, accounts: [] };
-  document.getElementById('new-user-hash-out').style.display='block';
-  document.getElementById('new-user-hash-val').textContent = hash;
-  showMsg(msg,'success',`User "${name}" added this session. Copy the hash above and add to USERS config in the HTML to make permanent.`);
-  renderUserList();
-}
-
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// ADMIN â€” ASSIGN ACCOUNTS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function openAssignModal(userKey) {
-  SESSION.assigningUser = userKey;
-  const u = USERS[userKey];
-  document.getElementById('assign-sub').textContent = `Assign accounts for ${u.name} (@${userKey})`;
-  const current = u.accounts.includes('*') ? Object.keys(ACCOUNTS) : u.accounts;
-  document.getElementById('assign-grid').innerHTML = Object.entries(ACCOUNTS).map(([k,a])=>`
-    <div class="acc-assign-item ${current.includes(k)?'selected':''}" onclick="toggleAssign(this,'${k}')">
-      <input type="checkbox" ${current.includes(k)?'checked':''} onclick="event.stopPropagation()">
-      <span class="acc-assign-label">${a.name}</span>
-    </div>`).join('');
-  openModal('modal-assign');
-}
-
-function toggleAssign(el, key) {
-  el.classList.toggle('selected');
-  el.querySelector('input').checked = el.classList.contains('selected');
-}
-
-function saveAssignment() {
-  const u = SESSION.assigningUser;
-  if (!u) return;
-  const selected = Array.from(document.querySelectorAll('.acc-assign-item.selected')).map(el=>el.querySelector('.acc-assign-label').textContent.trim());
-  const keys = Object.entries(ACCOUNTS).filter(([k,a])=>selected.includes(a.name)).map(([k])=>k);
-  USERS[u].accounts = keys;
-  renderUserList();
-  closeModal('modal-assign');
-}
-
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// PASSWORD CHANGE
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-async function doChangePassword() {
-  const old = document.getElementById('cp-old').value;
-  const nw  = document.getElementById('cp-new').value;
-  const cnf = document.getElementById('cp-confirm').value;
-  const msg = document.getElementById('cp-msg');
-  if (!old||!nw||!cnf) { showMsg(msg,'error','Please fill in all fields.'); return; }
-  if (nw !== cnf) { showMsg(msg,'error','New passwords do not match.'); return; }
-  if (nw.length < 8) { showMsg(msg,'error','Password must be at least 8 characters.'); return; }
-  const oldHash = await sha256(old);
-  if (oldHash !== SESSION.hash && oldHash !== (USERS[SESSION.user]||{}).hash) { showMsg(msg,'error','Current password is incorrect.'); return; }
-  const newHash = await sha256(nw);
-  if (USERS[SESSION.user]) { USERS[SESSION.user].hash = newHash; SESSION.hash = newHash; }
-  showMsg(msg,'success','Password updated this session. Use Admin Panel to generate the hash and update the HTML config permanently.');
-}
-
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// HASH TOOL
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-async function generateHash() {
-  const val = document.getElementById('hash-input').value;
-  if (!val) return;
-  const h = await sha256(val);
-  document.getElementById('hash-output').style.display='block';
-  document.getElementById('hash-val').textContent = h;
-}
-
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// MODALS + UTILS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-function toggleUserMenu() { /* password change disabled â€” fixed credentials in use */ }
-function showMsg(el, type, text) {
-  el.className = 'modal-msg ' + (type==='success'?'msg-success':'msg-error');
-  el.textContent = text;
-  el.style.display = 'block';
-}
-
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// INIT â€” restore session on reload + Remember Me
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-(function(){
-  // 1. Restore active session (tab/window still open)
-  const sess = sessionStorage.getItem('beakon_session');
-  if (sess) {
-    try {
-      const s = JSON.parse(sess);
-      if (s && s.user && USERS[s.user]) { SESSION.user=s.user; SESSION.hash=USERS[s.user].hash; const u=USERS[s.user]; if(u.role==='clientadmin'){showCyientHub();}else if(!redirectIfSingleAccount(u)){showCompanies();} return; }
-    } catch(e){}
-  }
-  // 2. Auto-fill remembered credentials if "Remember Me" was checked previously
-  if (localStorage.getItem('beakon_remember') === '1') {
-    const savedUser = localStorage.getItem('beakon_saved_user') || '';
-    const savedPass = localStorage.getItem('beakon_saved_pass') || '';
-    if (savedUser && savedPass) {
-      document.getElementById('login-user').value = savedUser;
-      document.getElementById('login-pass').value = savedPass;
-      document.getElementById('remember-me').checked = true;
-      // Auto-login silently
-      (async function(){
-        const hash = await sha256(savedPass);
-        const user = USERS[savedUser];
-        if (user && user.hash === hash) {
-          SESSION.user = savedUser;
-          SESSION.hash = hash;
-          sessionStorage.setItem('beakon_session', JSON.stringify({
-            user: savedUser, name: user.name, role: user.role,
-            company: user.company || 'cyient',
-            clearanceAccess: user.clearanceAccess === true
-          }));
-          if(user.role==='clientadmin'){showCyientHub();}else if(!redirectIfSingleAccount(user)){showCompanies();}
-        }
-      })();
-      return;
-    }
-  }
-  showScreen('screen-login');
-})();
-</script>
-</body>
-</html>
+  if (!name||!user||!pass) { showMs
