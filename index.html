@@ -1305,6 +1305,10 @@ function redirectIfSingleAccount(userObj) {
 
 function doLogout() {
   sessionStorage.removeItem('beakon_session');
+  // Clear Remember Me so reload doesn't silently re-log-in
+  localStorage.removeItem('beakon_remember');
+  localStorage.removeItem('beakon_saved_user');
+  localStorage.removeItem('beakon_saved_pass');
   // Clear cross-subdomain auto-unlock cookie
   document.cookie = 'beakon_tokens=; domain=.salesbeakon.com; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax; Secure';
   SESSION = {user:null,hash:null,assigningUser:null};
@@ -1707,7 +1711,7 @@ function showMsg(el, type, text) {
   if (sess) {
     try {
       const s = JSON.parse(sess);
-      if (s && s.user && USERS[s.user]) { SESSION.user=s.user; SESSION.hash=USERS[s.user].hash; const u=USERS[s.user]; if(u.role==='clientadmin'){showCyientHub();}else if(!redirectIfSingleAccount(u)){showCompanies();} return; }
+      if (s && s.user && USERS[s.user]) { SESSION.user=s.user; SESSION.hash=USERS[s.user].hash; const u=USERS[s.user]; writeBeakonTokensCookie(u); if(u.role==='clientadmin'){showCyientHub();}else if(!redirectIfSingleAccount(u)){showCompanies();} return; }
     } catch(e){}
   }
   // 2. Auto-fill remembered credentials if "Remember Me" was checked previously
@@ -1725,6 +1729,8 @@ function showMsg(el, type, text) {
         if (user && user.hash === hash) {
           SESSION.user = savedUser;
           SESSION.hash = hash;
+          // Write cross-subdomain auto-unlock cookie on Remember Me path too
+          writeBeakonTokensCookie(user);
           sessionStorage.setItem('beakon_session', JSON.stringify({
             user: savedUser, name: user.name, role: user.role,
             company: user.company || 'cyient',
