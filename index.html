@@ -1356,6 +1356,30 @@ const COMPANIES = {
 };
 
 // ════════════════════════════════════════════════
+// CLUSTER TAGGING (canonical cluster per account)
+// Drives BU-card filtering: A&D card shows only aerospace_defense accounts,
+// Rail card shows only rail accounts, Auto card shows only automotive accounts.
+// Add new accounts here when they're onboarded to the hub.
+// ════════════════════════════════════════════════
+(function tagClusters() {
+  var CLUSTER_MAP = {
+    // Aerospace & Defense (20)
+    textron:'aerospace_defense', boeing:'aerospace_defense', rtx:'aerospace_defense',
+    honeywell:'aerospace_defense', parker:'aerospace_defense', dhc:'aerospace_defense',
+    gea:'aerospace_defense', bae:'aerospace_defense', bombardier:'aerospace_defense',
+    embraer:'aerospace_defense', crane:'aerospace_defense', gulfstream:'aerospace_defense',
+    hondaaircraft:'aerospace_defense', neon:'aerospace_defense', ametek:'aerospace_defense',
+    transdigm:'aerospace_defense', jeppesen:'aerospace_defense', acron:'aerospace_defense',
+    aircanada:'aerospace_defense', safran:'aerospace_defense',
+    // Rail (5)
+    alstom:'rail', hitachirail:'rail', hitachists:'rail', cubic:'rail', kbr:'rail'
+  };
+  Object.keys(CLUSTER_MAP).forEach(function(k) {
+    if (ACCOUNTS[k]) ACCOUNTS[k].cluster = CLUSTER_MAP[k];
+  });
+})();
+
+// ════════════════════════════════════════════════
 // COMPUTE ROLES FROM BU BREAKDOWN (dynamic — no hardcoded totals)
 // When dashboard hiring data changes, update buRoles{} above and redeploy hub.
 // ════════════════════════════════════════════════
@@ -1604,7 +1628,7 @@ function showCompanies() {
   showScreen('screen-companies');
 }
 
-function showPortal(companyKey) {
+function showPortal(companyKey, cluster) {
   const sess = SESSION.user ? USERS[SESSION.user] : JSON.parse(sessionStorage.getItem('beakon_session')||'null');
   if (!sess) { showScreen('screen-login'); return; }
   const uname = typeof sess === 'object' && sess.name ? sess.name : (USERS[SESSION.user]||{}).name;
@@ -1618,13 +1642,21 @@ function showPortal(companyKey) {
     || Object.keys(COMPANIES)[0];
   const company = COMPANIES[cKey];
   SESSION.activeCompany = cKey;
+  SESSION.activeCluster = cluster || null;
 
   // Determine which accounts to show: intersection of user's accounts + company's subscribed accounts
   const allUserAccs = userObj
     ? (userObj.accounts.includes('*') ? Object.keys(ACCOUNTS) : userObj.accounts)
     : [];
   const companyAccs = company ? company.accounts : Object.keys(ACCOUNTS);
-  const userAccounts = allUserAccs.filter(k => companyAccs.includes(k));
+  let userAccounts = allUserAccs.filter(k => companyAccs.includes(k));
+
+  // Cluster filter: when entered via a BU cluster card (e.g. Rail, A&D), restrict
+  // to accounts whose cluster matches. Accounts without a cluster tag are dropped
+  // when a cluster filter is active so dashboards stay cleanly separated.
+  if (cluster) {
+    userAccounts = userAccounts.filter(k => (ACCOUNTS[k] && ACCOUNTS[k].cluster) === cluster);
+  }
 
   // Header
   const initials = (uname||'??').split(' ').map(n=>n[0]).join('').toUpperCase().slice(0,2);
@@ -1659,11 +1691,20 @@ function showPortal(companyKey) {
   // Greeting — use company name, not the user's team assignment
   const hr = new Date().getHours();
   const companyLabel = company ? company.name : 'Your';
+  const clusterLabel = cluster === 'rail' ? 'Rail'
+    : cluster === 'aerospace_defense' ? 'Aerospace & Defense'
+    : cluster === 'automotive' ? 'Automotive'
+    : null;
+  const headingSuffix = clusterLabel ? `${clusterLabel} Accounts` : 'Accounts';
   document.getElementById('portal-greeting').textContent =
-    `Good ${hr<12?'morning':hr<17?'afternoon':'evening'} — ${companyLabel} Accounts`;
+    `Good ${hr<12?'morning':hr<17?'afternoon':'evening'} — ${companyLabel} ${headingSuffix}`;
   document.getElementById('portal-subtitle').textContent = userAccounts.length===0
-    ? 'No accounts assigned yet. Contact your administrator.'
-    : `${companyLabel} has ${userAccounts.length} account${userAccounts.length>1?'s':''} in BEAKON. Click any card to open its intelligence dashboard.`;
+    ? (clusterLabel
+        ? `No ${clusterLabel} accounts assigned to you yet. Contact your administrator.`
+        : 'No accounts assigned yet. Contact your administrator.')
+    : (clusterLabel
+        ? `${userAccounts.length} ${clusterLabel} account${userAccounts.length>1?'s':''} subscribed. Click any card to open its intelligence dashboard.`
+        : `${companyLabel} has ${userAccounts.length} account${userAccounts.length>1?'s':''} in BEAKON. Click any card to open its intelligence dashboard.`);
 
   // Stats
   const totalRoles = userAccounts.reduce((s,k)=>s+(parseInt((ACCOUNTS[k]||{}).roles)||0),0);
@@ -1742,15 +1783,20 @@ function showCyientHub() {
   showScreen('screen-cyient-hub');
 }
 
-// A&D card click — show the full Cyient A&D account grid
+// A&D card click — show ONLY Cyient accounts whose cluster === 'aerospace_defense'
 function showCyientAD() {
-  showPortal('cyient');
+  showPortal('cyient', 'aerospace_defense');
 }
 
+// Rail card click — show ONLY Cyient accounts whose cluster === 'rail'
 function showCyientRail() {
-  // Currently mirrors A&D - shows all subscribed accounts.
-  // Future: filter by ACCOUNTS[k].cluster === 'rail' to show only Rail tiles.
-  showPortal('cyient');
+  showPortal('cyient', 'rail');
+}
+
+// Auto card click — show ONLY Cyient accounts whose cluster === 'automotive'
+// (no Auto accounts onboarded yet, but wired for when first one lands)
+function showCyientAuto() {
+  showPortal('cyient', 'automotive');
 }
 
 // ════════════════════════════════════════════════
